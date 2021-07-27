@@ -12,6 +12,7 @@
 		2050A66426A45D6B003A5DCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2050A66326A45D6B003A5DCB /* Assets.xcassets */; };
 		2050A66726A45D6B003A5DCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2050A66526A45D6B003A5DCB /* LaunchScreen.storyboard */; };
 		2050A66A26A45D6B003A5DCB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2050A66926A45D6B003A5DCB /* main.m */; };
+		207755E626B047D100DEFD44 /* PlaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 207755E526B047D100DEFD44 /* PlaceTableViewCell.m */; };
 		209AB65E26AC23B5005FF142 /* PlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 209AB65D26AC23B5005FF142 /* PlaceViewController.m */; };
 		209AB66126AC27A5005FF142 /* PlaceViewBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 209AB66026AC27A5005FF142 /* PlaceViewBuilder.m */; };
 		20A9CCFB26AF1D7A0087764C /* MViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A9CCFA26AF1D7A0087764C /* MViewController.m */; };
@@ -36,6 +37,9 @@
 		2050A66826A45D6B003A5DCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2050A66926A45D6B003A5DCB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		207755E026B03ADB00DEFD44 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		207755E426B047D100DEFD44 /* PlaceTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaceTableViewCell.h; sourceTree = "<group>"; };
+		207755E526B047D100DEFD44 /* PlaceTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaceTableViewCell.m; sourceTree = "<group>"; };
+		207755E726B04E2400DEFD44 /* DataViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataViewModel.h; sourceTree = "<group>"; };
 		209AB65C26AC23B5005FF142 /* PlaceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaceViewController.h; sourceTree = "<group>"; };
 		209AB65D26AC23B5005FF142 /* PlaceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaceViewController.m; sourceTree = "<group>"; };
 		209AB65F26AC27A5005FF142 /* PlaceViewBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaceViewBuilder.h; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 		2050A65626A45D6A003A5DCB /* AirTickets */ = {
 			isa = PBXGroup;
 			children = (
+				207755E326B0477800DEFD44 /* TableViewCells */,
 				207755DF26B03AAE00DEFD44 /* Constants */,
 				20B5E05C26A46A8E00F35E1B /* MainViewController */,
 				209AB65B26AC2377005FF142 /* PlaceViewControoller */,
@@ -118,6 +123,15 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		207755E326B0477800DEFD44 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				207755E426B047D100DEFD44 /* PlaceTableViewCell.h */,
+				207755E526B047D100DEFD44 /* PlaceTableViewCell.m */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
 		209AB65B26AC2377005FF142 /* PlaceViewControoller */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +152,7 @@
 				20B5E05326A46A2C00F35E1B /* City.m */,
 				20B5E05726A46A2C00F35E1B /* Country.h */,
 				20B5E05226A46A2C00F35E1B /* Country.m */,
+				207755E726B04E2400DEFD44 /* DataViewModel.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -257,6 +272,7 @@
 				2050A65C26A45D6A003A5DCB /* SceneDelegate.m in Sources */,
 				209AB66126AC27A5005FF142 /* PlaceViewBuilder.m in Sources */,
 				20B5E05826A46A2C00F35E1B /* Country.m in Sources */,
+				207755E626B047D100DEFD44 /* PlaceTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

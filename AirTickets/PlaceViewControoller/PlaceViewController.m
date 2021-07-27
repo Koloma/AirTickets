@@ -8,8 +8,8 @@
 #import "PlaceViewController.h"
 #import "PlaceViewBuilder.h"
 #import "Constants.h"
+#import "PlaceTableViewCell.h"
 
-#define reuseIdentifierCell @"CellPlace"
 
 @interface PlaceViewController ()
 
@@ -70,22 +70,29 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: reuseIdentifierCell];
+    PlaceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: reuseIdentifierCell];
     
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifierCell];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
-    
+    DataViewModel dataViewModel;
+
     if (_segmentedControl.selectedSegmentIndex == 0) {
         City *city = [_currentArray objectAtIndex:indexPath.row];
-        cell.textLabel.text = city.name;
-        cell.detailTextLabel.text = city.code;
+        dataViewModel.name = city.name;
+        dataViewModel.code = city.code;
+        dataViewModel.image = [UIImage systemImageNamed:@"airplane"];
+         
     }
-    else if (_segmentedControl.selectedSegmentIndex == 1) {
+    else {
         Airport *airport = [_currentArray objectAtIndex:indexPath.row];
-        cell.textLabel.text = airport.name;
-        cell.detailTextLabel.text = airport.code;
+        dataViewModel.name = airport.name;
+        dataViewModel.code = airport.code;
+        dataViewModel.image = [UIImage systemImageNamed:@"building.2.crop.circle"];
+    }
+    
+    if (!cell) {
+        cell = [[PlaceTableViewCell alloc] initWithDataViewModel:dataViewModel reuseIdentifier:reuseIdentifierCell];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    } else{
+        [cell configCell:dataViewModel];
     }
     
     return cell;
