@@ -6,6 +6,9 @@
 //
 
 #import "PlaceViewController.h"
+#import "PlaceViewBuilder.h"
+#import "Constants.h"
+
 #define reuseIdentifierCell @"CellPlace"
 
 @interface PlaceViewController ()
@@ -35,7 +38,7 @@
     _tableView.dataSource = self;
     [self.view addSubview: _tableView];
     
-    _segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"Cities", @"Airports"]];
+    _segmentedControl = [[UISegmentedControl alloc] initWithItems:@[titleCities, titleAirports]];
     [_segmentedControl addTarget:self action:@selector(changeSource) forControlEvents:UIControlEventValueChanged];
     _segmentedControl.tintColor = [UIColor blackColor];
     self.navigationItem.titleView = _segmentedControl;
@@ -43,10 +46,10 @@
     [self changeSource];
     
     if (_placeType == PlaceTypeDeparture) {
-        self.title = @"From";
+        self.title = titleDeparture;
     }
     else {
-        self.title = @"Where";
+        self.title = titleArrival;
     }
     
 }

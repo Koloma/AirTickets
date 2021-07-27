@@ -6,7 +6,7 @@
 //
 
 #import "SceneDelegate.h"
-#import "ViewController.h"
+#import "MViewController.h"
 
 @interface SceneDelegate ()
 
@@ -21,7 +21,7 @@
     self.window = [[UIWindow alloc] initWithFrame: mainFarme];
     [self.window makeKeyAndVisible];
     
-    ViewController *viewController = [ViewController new];
+    MViewController *viewController = [MViewController new];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
     
     self.window.rootViewController = navigationController;
