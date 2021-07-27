@@ -22,18 +22,17 @@
     self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
     if (self)
     {
-        _nameLable = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, [UIScreen mainScreen].bounds.size.width / 2.0, 44.0)];
-        _nameLable.textAlignment = NSTextAlignmentCenter;
-        
+        _cellImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 44.0, 44.0)];
+        [self.contentView addSubview:_cellImageView];
+
+        _nameLable = [[UILabel alloc] initWithFrame:CGRectMake(54.0, 44.0, [UIScreen mainScreen].bounds.size.width / 2.0, 44.0)];
+        _nameLable.textAlignment = NSTextAlignmentLeft;
         [self.contentView addSubview:_nameLable];
         
         _codeLable = [[UILabel alloc] initWithFrame: CGRectMake([UIScreen mainScreen].bounds.size.width / 2.0, 0.0, [UIScreen mainScreen].bounds.size.width / 2.0, 44.0)];
         _codeLable.textAlignment = NSTextAlignmentCenter;
-        
         [self.contentView addSubview:_codeLable];
-        
-        _cellImageView = [[UIImageView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width / 2.0, 0.0, [UIScreen mainScreen].bounds.size.width / 2.0, 44.0)];
-       
+         
         [self configCell:dataViewModel];
     }
     return self;
@@ -48,8 +47,8 @@
 
 - (void)prepareForReuse {
     [super prepareForReuse];
-    _codeLable.text = nil;
     _nameLable.text = nil;
+    _codeLable.text = nil;
     _cellImageView.image = nil;
 }
 
