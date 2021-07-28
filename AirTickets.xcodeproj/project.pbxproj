@@ -87,6 +87,24 @@
 			path = APIManager;
 			sourceTree = "<group>";
 		};
+		2048AA7A26B1A4CA0023B435 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				200DFBDC26B19BDE00662A4F /* APIManager */,
+				20B5E05E26A46AB700F35E1B /* DataManager */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		2048AA7C26B1A4FD0023B435 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				209AB65B26AC2377005FF142 /* PlaceViewControoller */,
+				20B5E05C26A46A8E00F35E1B /* MainViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		2050A64B26A45D6A003A5DCB = {
 			isa = PBXGroup;
 			children = (
@@ -106,12 +124,10 @@
 		2050A65626A45D6A003A5DCB /* AirTickets */ = {
 			isa = PBXGroup;
 			children = (
-				200DFBDC26B19BDE00662A4F /* APIManager */,
+				2048AA7C26B1A4FD0023B435 /* ViewControllers */,
+				2048AA7A26B1A4CA0023B435 /* Service */,
 				207755E326B0477800DEFD44 /* TableViewCells */,
 				207755DF26B03AAE00DEFD44 /* Constants */,
-				20B5E05C26A46A8E00F35E1B /* MainViewController */,
-				209AB65B26AC2377005FF142 /* PlaceViewControoller */,
-				20B5E05E26A46AB700F35E1B /* DataManager */,
 				20B5E05126A469E700F35E1B /* Model */,
 				2050A67026A46167003A5DCB /* DataJSON */,
 				20B5E05B26A46A5600F35E1B /* System */,

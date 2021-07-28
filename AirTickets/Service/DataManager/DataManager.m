@@ -24,7 +24,6 @@
     return instance;
 }
 
-
 - (NSMutableArray *)createObjectsFromArray: (NSArray *) array withType: (DataSourceType) type {
     NSMutableArray *results = [NSMutableArray new];
     for (NSDictionary *jsonObject in array) {
@@ -43,7 +42,6 @@
     }
     return results;
 }
-
 
 - (void)loadData
 {
@@ -64,27 +62,33 @@
    });
 }
 
-
 - (NSArray *)arrayFromFileName:(NSString *)fileName ofType: (NSString *) type {
     NSString *path = [[NSBundle mainBundle] pathForResource:fileName ofType:type];
     NSData *data =[NSData dataWithContentsOfFile: path];
     return [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
 }
 
-
 - (NSArray *)countries {
     return _countriesArray;
 }
-
 
 - (NSArray *)cities {
     return _citiesArray;
 }
 
-
 - (NSArray *)airports {
     return _airportsArray;
 }
 
+- (City *)cityForIATA:(NSString *)iata {
+    if (iata) {
+        for (City *city in _citiesArray) {
+            if ([city.code isEqualToString:iata]) {
+                return city;
+            }
+        }
+    }
+    return nil;
+}
 
 @end

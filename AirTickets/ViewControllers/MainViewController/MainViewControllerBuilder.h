@@ -12,8 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MainViewControllerBuilder : NSObject
 
-+ (UIButton *)builDepartureButton:(NSString *)title;
-+ (UIButton *)builArrivalButton:(NSString *)title departureButton:(UIButton *)departureButton;
++ (UIButton *)buildGetCityByIPButton:(NSString *)title;
++ (UIButton *)buildGetCityByGPSButton:(NSString *)title;
++ (UIButton *)buildDepartureButton:(NSString *)title;
++ (UIButton *)buildArrivalButton:(NSString *)title departureButton:(UIButton *)departureButton;
 
 @end
 
