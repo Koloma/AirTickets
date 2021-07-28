@@ -15,7 +15,7 @@
 
 @implementation DataManager
 
-+ (instancetype) shared {
++ (instancetype)sharedInstance {
     static DataManager *instance;
     static dispatch_once_t onceToken;
      dispatch_once(&onceToken, ^{
@@ -25,7 +25,7 @@
 }
 
 
-- (NSMutableArray *) createObjectsFromArray: (NSArray *) array withType: (DataSourceType) type {
+- (NSMutableArray *)createObjectsFromArray: (NSArray *) array withType: (DataSourceType) type {
     NSMutableArray *results = [NSMutableArray new];
     for (NSDictionary *jsonObject in array) {
         if (type == DataSourceTypeCountry) {
@@ -65,24 +65,24 @@
 }
 
 
-- (NSArray *) arrayFromFileName:(NSString *)fileName ofType: (NSString *) type {
+- (NSArray *)arrayFromFileName:(NSString *)fileName ofType: (NSString *) type {
     NSString *path = [[NSBundle mainBundle] pathForResource:fileName ofType:type];
     NSData *data =[NSData dataWithContentsOfFile: path];
     return [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
 }
 
 
-- (NSArray *) countries {
+- (NSArray *)countries {
     return _countriesArray;
 }
 
 
-- (NSArray *) cities {
+- (NSArray *)cities {
     return _citiesArray;
 }
 
 
-- (NSArray *) airports {
+- (NSArray *)airports {
     return _airportsArray;
 }
 
