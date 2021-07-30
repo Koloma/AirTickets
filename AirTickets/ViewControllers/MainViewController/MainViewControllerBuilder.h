@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIButton *)buildGetCityByGPSButton:(NSString *)title;
 + (UIButton *)buildDepartureButton:(NSString *)title;
 + (UIButton *)buildArrivalButton:(NSString *)title departureButton:(UIButton *)departureButton;
++ (UIButton *)buildSearchButton:(NSString *)title arrivalButton:(UIButton *)arrivalButton;
 
 @end
 

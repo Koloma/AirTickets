@@ -8,6 +8,8 @@
 #import "MViewController.h"
 #import "Constants.h"
 #import "APIManager.h"
+#import "TicketsViewController.h"
+#import "Ticket.h"
 
 @interface MViewController ()
 
@@ -15,6 +17,7 @@
 @property (nonatomic, strong) UIButton *cityByGPSButton;
 @property (nonatomic, strong) UIButton *departureButton;
 @property (nonatomic, strong) UIButton *arrivalButton;
+@property (nonatomic, strong) UIButton *searchButton;
 @property (nonatomic) SearchRequest searchRequest;
 
 @end
@@ -48,6 +51,9 @@
     [_arrivalButton addTarget:self action:@selector(placeButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_arrivalButton];
     
+    _searchButton = [MainViewControllerBuilder buildSearchButton:titleSearch arrivalButton:_arrivalButton];
+    [_searchButton addTarget:self action:@selector(searchButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_searchButton];
 }
 
 
@@ -79,7 +85,18 @@
     [self.navigationController pushViewController: placeViewController animated:YES];
 }
 
-
+- (void)searchButtonDidTap:(UIButton *)sender {
+    [[APIManager sharedInstance] ticketsWithRequest:_searchRequest withCompletion:^(NSArray *tickets) {
+        if (tickets.count > 0) {
+            TicketsViewController *ticketsViewController = [[TicketsViewController alloc] initWithTickets:tickets];
+            [self.navigationController showViewController:ticketsViewController sender:self];
+        } else {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Увы!" message:@"По данному направлению билетов не найдено" preferredStyle: UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"Закрыть" style:(UIAlertActionStyleDefault) handler:nil]];
+            [self presentViewController:alertController animated:YES completion:nil];
+        }
+    }];
+}
 
 - (void)setPlace:(id)place withDataType:(DataSourceType)dataType andPlaceType:(PlaceType)placeType forButton:(UIButton *)button {
     

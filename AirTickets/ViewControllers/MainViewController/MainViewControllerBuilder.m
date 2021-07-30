@@ -46,12 +46,21 @@
 
 + (UIButton *)buildArrivalButton:(NSString *)title departureButton:(UIButton *)departureButton {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-    [button setTitle:@"Куда" forState: UIControlStateNormal];
+    [button setTitle: title forState: UIControlStateNormal];
     button.tintColor = [UIColor blackColor];
     button.frame = CGRectMake(leftPad, CGRectGetMaxY(departureButton.frame) + 20.0, [UIScreen mainScreen].bounds.size.width - 60.0, buttonHeight);
     button.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3];
     return button;
 }
 
++ (UIButton *)buildSearchButton:(NSString *)title arrivalButton:(UIButton *)arrivalButton {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    [button setTitle: title forState: UIControlStateNormal];
+    button.tintColor = [UIColor blackColor];
+    button.frame = CGRectMake(leftPad, CGRectGetMaxY(arrivalButton.frame) + 30, [UIScreen mainScreen].bounds.size.width - 60.0, buttonHeight);
+    button.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3];
+    button.titleLabel.font = [UIFont systemFontOfSize:20.0 weight:UIFontWeightBold];
+    return button;
+}
 
 @end

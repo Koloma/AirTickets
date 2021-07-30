@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		200DFBDF26B19C0F00662A4F /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 200DFBDE26B19C0F00662A4F /* APIManager.m */; };
 		200DFBE226B19E5A00662A4F /* Ticket.m in Sources */ = {isa = PBXBuildFile; fileRef = 200DFBE126B19E5A00662A4F /* Ticket.m */; };
+		203A140426B387FB0087BF4C /* TicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 203A140326B387FB0087BF4C /* TicketsViewController.m */; };
 		2050A65926A45D6A003A5DCB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2050A65826A45D6A003A5DCB /* AppDelegate.m */; };
 		2050A65C26A45D6A003A5DCB /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2050A65B26A45D6A003A5DCB /* SceneDelegate.m */; };
 		2050A66426A45D6B003A5DCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2050A66326A45D6B003A5DCB /* Assets.xcassets */; };
@@ -33,6 +34,8 @@
 		200DFBDE26B19C0F00662A4F /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 		200DFBE026B19E5A00662A4F /* Ticket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ticket.h; sourceTree = "<group>"; };
 		200DFBE126B19E5A00662A4F /* Ticket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Ticket.m; sourceTree = "<group>"; };
+		203A140226B387FB0087BF4C /* TicketsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketsViewController.h; sourceTree = "<group>"; };
+		203A140326B387FB0087BF4C /* TicketsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketsViewController.m; sourceTree = "<group>"; };
 		2050A65426A45D6A003A5DCB /* AirTickets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirTickets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2050A65726A45D6A003A5DCB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2050A65826A45D6A003A5DCB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -87,6 +90,15 @@
 			path = APIManager;
 			sourceTree = "<group>";
 		};
+		203A140126B387C20087BF4C /* TicketsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				203A140226B387FB0087BF4C /* TicketsViewController.h */,
+				203A140326B387FB0087BF4C /* TicketsViewController.m */,
+			);
+			path = TicketsViewController;
+			sourceTree = "<group>";
+		};
 		2048AA7A26B1A4CA0023B435 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +111,7 @@
 		2048AA7C26B1A4FD0023B435 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				203A140126B387C20087BF4C /* TicketsViewController */,
 				209AB65B26AC2377005FF142 /* PlaceViewControoller */,
 				20B5E05C26A46A8E00F35E1B /* MainViewController */,
 			);
@@ -306,6 +319,7 @@
 				20A9CCFB26AF1D7A0087764C /* MViewController.m in Sources */,
 				2050A65C26A45D6A003A5DCB /* SceneDelegate.m in Sources */,
 				200DFBDF26B19C0F00662A4F /* APIManager.m in Sources */,
+				203A140426B387FB0087BF4C /* TicketsViewController.m in Sources */,
 				209AB66126AC27A5005FF142 /* PlaceViewBuilder.m in Sources */,
 				20B5E05826A46A2C00F35E1B /* Country.m in Sources */,
 				207755E626B047D100DEFD44 /* PlaceTableViewCell.m in Sources */,
