@@ -57,10 +57,10 @@
 -(void) changeSource {
     switch (_segmentedControl.selectedSegmentIndex) {
         case 0:
-            _currentArray = [[DataManager shared] cities];
+            _currentArray = [[DataManager sharedInstance] cities];
             break;
         case 1:
-            _currentArray = [[DataManager shared] airports];
+            _currentArray = [[DataManager sharedInstance] airports];
             break;
         default:
             break;

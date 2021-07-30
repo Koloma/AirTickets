@@ -5,6 +5,8 @@
 //  Created by Alexander Kolomenskiy on 27.07.2021.
 //
 
+#import <UIKit/UIKit.h>
+
 #ifndef DataViewModel_h
 #define DataViewModel_h
 
