@@ -38,6 +38,7 @@
 }
 
 - (void)dealloc {
+    NSLog(@"MapViewController dealloc");
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
