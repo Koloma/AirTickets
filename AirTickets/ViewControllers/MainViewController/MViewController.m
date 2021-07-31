@@ -10,14 +10,16 @@
 #import "APIManager.h"
 #import "TicketsViewController.h"
 #import "Ticket.h"
+#import "MapViewController.h"
 
-@interface MViewController ()
+@interface MViewController () <PlaceViewControllerDelegate>
 
 @property (nonatomic, strong) UIButton *cityByIPButton;
 @property (nonatomic, strong) UIButton *cityByGPSButton;
 @property (nonatomic, strong) UIButton *departureButton;
 @property (nonatomic, strong) UIButton *arrivalButton;
 @property (nonatomic, strong) UIButton *searchButton;
+@property (nonatomic, strong) UIButton *mapButton;
 @property (nonatomic) SearchRequest searchRequest;
 
 @end
@@ -54,6 +56,10 @@
     _searchButton = [MainViewControllerBuilder buildSearchButton:titleSearch arrivalButton:_arrivalButton];
     [_searchButton addTarget:self action:@selector(searchButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_searchButton];
+    
+    _mapButton = [MainViewControllerBuilder buildMapButton:titleMapButton searchButton:_searchButton];
+    [_mapButton addTarget:self action:@selector(mapButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_mapButton];
 }
 
 
@@ -97,6 +103,13 @@
         }
     }];
 }
+
+- (void)mapButtonDidTap:(UIButton *)sender {
+    MapViewController *mapViewController = [[MapViewController alloc] init];
+    [self.navigationController pushViewController:mapViewController animated:YES];
+}
+
+
 
 - (void)setPlace:(id)place withDataType:(DataSourceType)dataType andPlaceType:(PlaceType)placeType forButton:(UIButton *)button {
     

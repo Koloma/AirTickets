@@ -12,8 +12,6 @@
 #define buttonHeight 60.0
 #define leftPad  30.0
 
-
-
 + (UIButton *)buildGetCityByIPButton:(NSString *)title {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
     [button setTitle:title forState: UIControlStateNormal];
@@ -62,5 +60,16 @@
     button.titleLabel.font = [UIFont systemFontOfSize:20.0 weight:UIFontWeightBold];
     return button;
 }
+
++ (UIButton *)buildMapButton:(NSString *)title searchButton:(UIButton *)searchButton {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    [button setTitle: title forState: UIControlStateNormal];
+    button.tintColor = [UIColor blackColor];
+    button.frame = CGRectMake(leftPad, CGRectGetMaxY(searchButton.frame) + 30, [UIScreen mainScreen].bounds.size.width - 60.0, buttonHeight);
+    button.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3];
+    button.titleLabel.font = [UIFont systemFontOfSize:20.0 weight:UIFontWeightBold];
+    return button;
+}
+
 
 @end
