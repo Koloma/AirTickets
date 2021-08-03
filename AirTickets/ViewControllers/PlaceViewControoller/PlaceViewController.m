@@ -17,6 +17,8 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UISegmentedControl *segmentedControl;
 @property (nonatomic, strong) NSArray *currentArray;
+@property (nonatomic, strong) NSArray *searchArray;
+@property (nonatomic, strong) UISearchController *searchController;
 
 @end
 
@@ -33,9 +35,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    _searchController.obscuresBackgroundDuringPresentation = NO;
+    _searchController.searchResultsUpdater = self;
+    _searchArray = [NSArray new];
+    
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _tableView.tableHeaderView = _searchController.searchBar;
     [self.view addSubview: _tableView];
     
     _segmentedControl = [[UISegmentedControl alloc] initWithItems:@[titleCities, titleAirports]];
@@ -75,14 +83,14 @@
     DataViewModel dataViewModel;
 
     if (_segmentedControl.selectedSegmentIndex == 0) {
-        City *city = [_currentArray objectAtIndex:indexPath.row];
+        City *city = (_searchController.isActive && [_searchArray count] > 0) ? [_searchArray objectAtIndex:indexPath.row] : [_currentArray objectAtIndex:indexPath.row];
         dataViewModel.name = city.name;
         dataViewModel.code = city.code;
         dataViewModel.image = [UIImage systemImageNamed:@"airplane"];
          
     }
     else {
-        Airport *airport = [_currentArray objectAtIndex:indexPath.row];
+        Airport *airport = (_searchController.isActive && [_searchArray count] > 0) ? [_searchArray objectAtIndex:indexPath.row] : [_currentArray objectAtIndex:indexPath.row];
         dataViewModel.name = airport.name;
         dataViewModel.code = airport.code;
         dataViewModel.image = [UIImage systemImageNamed:@"building.2.crop.circle"];
@@ -104,10 +112,22 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
-    DataSourceType dataType = ((int) _segmentedControl.selectedSegmentIndex) + 1;
-    [self.delegate selectPlace:[_currentArray objectAtIndex:indexPath.row] withType:_placeType andDataType:dataType];
+    DataSourceType dataType = ((int)_segmentedControl.selectedSegmentIndex) + 1;
+    if (_searchController.isActive && [_searchArray count] > 0) {
+        [self.delegate selectPlace:[_searchArray objectAtIndex:indexPath.row] withType:_placeType andDataType:dataType];
+        _searchController.active = NO;
+    } else {
+        [self.delegate selectPlace:[_currentArray objectAtIndex:indexPath.row] withType:_placeType andDataType:dataType];
+    }
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    if (searchController.searchBar.text) {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.name CONTAINS[cd] %@", searchController.searchBar.text];
+        _searchArray = [_currentArray filteredArrayUsingPredicate: predicate];
+        [_tableView reloadData];
+    }
 }
 
 @end

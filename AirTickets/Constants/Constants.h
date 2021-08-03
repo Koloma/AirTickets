@@ -14,6 +14,7 @@
 #define titleSearch @"Найти"
 #define titleTikets @"Билеты"
 #define titleMapButton @"Показать на карте"
+#define titleMapPrice @"Карта цен"
 
 
 #define API_TOKEN @"0fa373e04e1c63743565bf8e13cc1486"
