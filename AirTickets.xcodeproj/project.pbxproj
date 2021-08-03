@@ -227,10 +227,10 @@
 				20B5E05726A46A2C00F35E1B /* Country.h */,
 				20B5E05226A46A2C00F35E1B /* Country.m */,
 				207755E726B04E2400DEFD44 /* DataViewModel.h */,
-				200DFBE026B19E5A00662A4F /* Ticket.h */,
-				200DFBE126B19E5A00662A4F /* Ticket.m */,
 				2045FEE326B50CC700636198 /* MapPrice.h */,
 				2045FEE426B50CC700636198 /* MapPrice.m */,
+				200DFBE026B19E5A00662A4F /* Ticket.h */,
+				200DFBE126B19E5A00662A4F /* Ticket.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
