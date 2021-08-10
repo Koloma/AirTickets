@@ -13,6 +13,10 @@
 		2045FEDE26B50A8E00636198 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2045FEDD26B50A8E00636198 /* MapViewController.m */; };
 		2045FEE226B50AE300636198 /* LocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2045FEE126B50AE300636198 /* LocationService.m */; };
 		2045FEE526B50CC700636198 /* MapPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 2045FEE426B50CC700636198 /* MapPrice.m */; };
+		204738DD26C2A92400464A4B /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 204738DC26C2A92400464A4B /* ContentViewController.m */; };
+		204738E126C2A9A600464A4B /* NotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 204738E026C2A9A600464A4B /* NotificationCenter.m */; };
+		204738E526C2AA8100464A4B /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 204738E426C2AA8100464A4B /* ProgressView.m */; };
+		204738E926C2AF2B00464A4B /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 204738E826C2AF2B00464A4B /* FirstViewController.m */; };
 		2050A65926A45D6A003A5DCB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2050A65826A45D6A003A5DCB /* AppDelegate.m */; };
 		2050A65C26A45D6A003A5DCB /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2050A65B26A45D6A003A5DCB /* SceneDelegate.m */; };
 		2050A66426A45D6B003A5DCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2050A66326A45D6B003A5DCB /* Assets.xcassets */; };
@@ -51,6 +55,14 @@
 		2045FEE126B50AE300636198 /* LocationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationService.m; sourceTree = "<group>"; };
 		2045FEE326B50CC700636198 /* MapPrice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapPrice.h; sourceTree = "<group>"; };
 		2045FEE426B50CC700636198 /* MapPrice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapPrice.m; sourceTree = "<group>"; };
+		204738DB26C2A92400464A4B /* ContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
+		204738DC26C2A92400464A4B /* ContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
+		204738DF26C2A9A600464A4B /* NotificationCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationCenter.h; sourceTree = "<group>"; };
+		204738E026C2A9A600464A4B /* NotificationCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationCenter.m; sourceTree = "<group>"; };
+		204738E326C2AA8100464A4B /* ProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
+		204738E426C2AA8100464A4B /* ProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
+		204738E726C2AF2B00464A4B /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		204738E826C2AF2B00464A4B /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		2050A65426A45D6A003A5DCB /* AirTickets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirTickets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2050A65726A45D6A003A5DCB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2050A65826A45D6A003A5DCB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -143,9 +155,46 @@
 			path = LocationService;
 			sourceTree = "<group>";
 		};
+		204738DA26C2A8F500464A4B /* ContentViewController */ = {
+			isa = PBXGroup;
+			children = (
+				204738DB26C2A92400464A4B /* ContentViewController.h */,
+				204738DC26C2A92400464A4B /* ContentViewController.m */,
+			);
+			path = ContentViewController;
+			sourceTree = "<group>";
+		};
+		204738DE26C2A99100464A4B /* NotificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				204738DF26C2A9A600464A4B /* NotificationCenter.h */,
+				204738E026C2A9A600464A4B /* NotificationCenter.m */,
+			);
+			path = NotificationCenter;
+			sourceTree = "<group>";
+		};
+		204738E226C2AA6100464A4B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				204738E326C2AA8100464A4B /* ProgressView.h */,
+				204738E426C2AA8100464A4B /* ProgressView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		204738E626C2AF1000464A4B /* FirstViewController */ = {
+			isa = PBXGroup;
+			children = (
+				204738E726C2AF2B00464A4B /* FirstViewController.h */,
+				204738E826C2AF2B00464A4B /* FirstViewController.m */,
+			);
+			path = FirstViewController;
+			sourceTree = "<group>";
+		};
 		2048AA7A26B1A4CA0023B435 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				204738DE26C2A99100464A4B /* NotificationCenter */,
 				2076BE9D26BD886B00AF5FAB /* CoreData */,
 				2045FEDF26B50ACA00636198 /* LocationService */,
 				200DFBDC26B19BDE00662A4F /* APIManager */,
@@ -157,6 +206,8 @@
 		2048AA7C26B1A4FD0023B435 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				204738E626C2AF1000464A4B /* FirstViewController */,
+				204738DA26C2A8F500464A4B /* ContentViewController */,
 				2053A40426B972F700111EE4 /* TabBarController */,
 				2045FEDB26B50A7500636198 /* MapViewController */,
 				203A140126B387C20087BF4C /* TicketsViewController */,
@@ -185,6 +236,7 @@
 		2050A65626A45D6A003A5DCB /* AirTickets */ = {
 			isa = PBXGroup;
 			children = (
+				204738E226C2AA6100464A4B /* Views */,
 				2048AA7C26B1A4FD0023B435 /* ViewControllers */,
 				2048AA7A26B1A4CA0023B435 /* Service */,
 				207755E326B0477800DEFD44 /* TableViewCells */,
@@ -394,8 +446,10 @@
 				20B5E05926A46A2C00F35E1B /* City.m in Sources */,
 				2050A66A26A45D6B003A5DCB /* main.m in Sources */,
 				20B5E06126A46B6300F35E1B /* DataManager.m in Sources */,
+				204738E526C2AA8100464A4B /* ProgressView.m in Sources */,
 				200DFBE226B19E5A00662A4F /* Ticket.m in Sources */,
 				20A9CCFB26AF1D7A0087764C /* MViewController.m in Sources */,
+				204738E126C2A9A600464A4B /* NotificationCenter.m in Sources */,
 				2050A65C26A45D6A003A5DCB /* SceneDelegate.m in Sources */,
 				200DFBDF26B19C0F00662A4F /* APIManager.m in Sources */,
 				205C94C026BE2C2900972B5A /* TicketTableViewCell.m in Sources */,
@@ -404,6 +458,8 @@
 				2076BEA926BD9CF700AF5FAB /* FavoriteTicket+CoreDataProperties.m in Sources */,
 				203A140426B387FB0087BF4C /* TicketsViewController.m in Sources */,
 				209AB66126AC27A5005FF142 /* PlaceViewBuilder.m in Sources */,
+				204738E926C2AF2B00464A4B /* FirstViewController.m in Sources */,
+				204738DD26C2A92400464A4B /* ContentViewController.m in Sources */,
 				20B5E05826A46A2C00F35E1B /* Country.m in Sources */,
 				2076BEA026BD888600AF5FAB /* CoreDataHelper.m in Sources */,
 				207755E626B047D100DEFD44 /* PlaceTableViewCell.m in Sources */,
