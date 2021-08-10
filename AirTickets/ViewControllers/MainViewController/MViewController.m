@@ -11,6 +11,8 @@
 #import "TicketsViewController.h"
 #import "Ticket.h"
 #import "MapViewController.h"
+#import "ProgressView.h"
+#import "FirstViewController.h"
 
 @interface MViewController () <PlaceViewControllerDelegate>
 
@@ -25,6 +27,21 @@
 @end
 
 @implementation MViewController
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self presentFirstViewControllerIfNeeded];
+}
+
+- (void)presentFirstViewControllerIfNeeded
+{
+    BOOL isFirstStart = [[NSUserDefaults standardUserDefaults] boolForKey:@"first_start"];
+    if (!isFirstStart) {
+        FirstViewController *firstViewController = [[FirstViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+        [self presentViewController:firstViewController animated:YES completion:nil];
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -92,16 +109,26 @@
 }
 
 - (void)searchButtonDidTap:(UIButton *)sender {
-    [[APIManager sharedInstance] ticketsWithRequest:_searchRequest withCompletion:^(NSArray *tickets) {
-        if (tickets.count > 0) {
-            TicketsViewController *ticketsViewController = [[TicketsViewController alloc] initWithTickets:tickets];
-            [self.navigationController showViewController:ticketsViewController sender:self];
-        } else {
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Увы!" message:@"По данному направлению билетов не найдено" preferredStyle: UIAlertControllerStyleAlert];
-            [alertController addAction:[UIAlertAction actionWithTitle:@"Закрыть" style:(UIAlertActionStyleDefault) handler:nil]];
-            [self presentViewController:alertController animated:YES completion:nil];
-        }
-    }];
+    if (_searchRequest.origin && _searchRequest.destionation) {
+        [[ProgressView sharedInstance] show:^{
+            [[APIManager sharedInstance] ticketsWithRequest:self->_searchRequest withCompletion:^(NSArray *tickets) {
+                [[ProgressView sharedInstance] dismiss:^{
+                    if (tickets.count > 0) {
+                        TicketsViewController *ticketsViewController = [[TicketsViewController alloc] initWithTickets:tickets];
+                        [self.navigationController showViewController:ticketsViewController sender:self];
+                    } else {
+                        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Увы!" message:@"По данному направлению билетов не найдено" preferredStyle: UIAlertControllerStyleAlert];
+                        [alertController addAction:[UIAlertAction actionWithTitle:@"Закрыть" style:(UIAlertActionStyleDefault) handler:nil]];
+                        [self presentViewController:alertController animated:YES completion:nil];
+                    }
+                }];
+            }];
+        }];
+    } else {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Ошибка" message:@"Необходимо указать место отправления и место прибытия" preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"Закрыть" style:(UIAlertActionStyleDefault) handler:nil]];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
 }
 
 - (void)mapButtonDidTap:(UIButton *)sender {
