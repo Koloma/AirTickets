@@ -6,16 +6,16 @@
 //
 
 
-#define titleNavigationController @"Поиск авиабилетов"
-#define titleDeparture @"Откуда"
-#define titleArrival @"Куда"
-#define titleCities @"Города"
-#define titleAirports @"Аэропорты"
-#define titleSearch @"Найти"
-#define titleTikets @"Билеты"
-#define titleMapButton @"Показать на карте"
-#define titleMapPrice @"Карта цен"
-#define titleFavorite @"Избранное"
+#define titleNavigationController NSLocalizedString(@"titleNavigationController", "")
+#define titleDeparture NSLocalizedString(@"titleDeparture", "")
+#define titleArrival NSLocalizedString(@"titleArrival", "")
+#define titleCities NSLocalizedString(@"titleCities", "")
+#define titleAirports NSLocalizedString(@"titleAirports", "")
+#define titleSearch NSLocalizedString(@"titleSearch", "")
+#define titleTikets NSLocalizedString(@"titleTikets", "")
+#define titleMapButton NSLocalizedString(@"titleMapButton", "")
+#define titleMapPrice NSLocalizedString(@"titleMapPrice", "")
+#define titleFavorite NSLocalizedString(@"titleFavorite", "")
 
 
 #define API_TOKEN @"0fa373e04e1c63743565bf8e13cc1486"
