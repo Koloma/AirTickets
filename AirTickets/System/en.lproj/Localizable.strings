@@ -1,0 +1,18 @@
+/* 
+  Locolizable.strings
+  AirTickets
+
+  Created by Alexander Kolomenskiy on 11.08.2021.
+  
+*/
+
+"titleNavigationController" = "Search Avia tickets";
+"titleDeparture" = "From";
+"titleArrival" = "Where";
+"titleCities" = "City";
+"titleAirports" = "Airports";
+"titleSearch" = "Finde";
+"titleTikets" = "Tickets";
+"titleMapButton" = "Show on Map";
+"titleMapPrice" = "Price Map";
+"titleFavorite" = "Favorite";

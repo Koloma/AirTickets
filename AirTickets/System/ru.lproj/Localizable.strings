@@ -1,0 +1,18 @@
+/* 
+  Locolizable.strings
+  AirTickets
+
+  Created by Alexander Kolomenskiy on 11.08.2021.
+  
+*/
+
+"titleNavigationController" = "Поиск авиабилетов";
+"titleDeparture" = "Откуда";
+"titleArrival" = "Куда";
+"titleCities" = "Города";
+"titleAirports" = "Аэропорты";
+"titleSearch" = "Найти";
+"titleTikets" = "Билеты";
+"titleMapButton" = "Показать на карте";
+"titleMapPrice" = "Карта цен";
+"titleFavorite" = "Избранное";
